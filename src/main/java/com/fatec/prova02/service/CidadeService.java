@@ -22,5 +22,9 @@ public class CidadeService {
     public Optional<Cidade> getCidadeById(int id){
         return repository.findById(id);
     }
+
+    public Cidade saveClient(Cidade cidade){
+        return repository.save(cidade);
+    }
     
 }
