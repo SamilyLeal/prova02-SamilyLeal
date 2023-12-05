@@ -2,7 +2,6 @@ package com.fatec.prova02.controller;
 
 import java.net.URI;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -31,7 +30,7 @@ public class CidadeController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Optional<Cidade>> getCidadeById(@PathVariable int id){
+    public ResponseEntity<Cidade> getCidadeById(@PathVariable int id){
         return ResponseEntity.ok(service.getCidadeById(id));
     }
 
