@@ -1,10 +1,13 @@
 package com.fatec.prova02.model;
 
+import org.hibernate.validator.constraints.Range;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "CIDADE_TB")
@@ -12,11 +15,19 @@ public class Cidade {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
+
+    @NotBlank(message = "Campo nome não preenchido!")
     String nome;
+
+    @NotBlank(message = "Campo estado não preenchido!")
     String estado;
+
+    @Range(min = 1)
     int habitantes;
+
+    @Range(min = 1)
     int anos;
-    
+
     public int getId() {
         return id;
     }

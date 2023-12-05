@@ -36,13 +36,13 @@ public class CidadeController {
     }
 
     @PostMapping()
-    public ResponseEntity<Cidade> saveClient(@RequestBody @Validated Cidade cidade){
+    public ResponseEntity<Cidade> saveCidade(@RequestBody @Validated Cidade cidade){
         URI location = ServletUriComponentsBuilder
             .fromCurrentRequest()
             .path("/{id}")
             .buildAndExpand(cidade.getId())
             .toUri();
 
-        return ResponseEntity.created(location).body(service.saveClient(cidade));
+        return ResponseEntity.created(location).body(service.saveCidade(cidade));
     }
 }

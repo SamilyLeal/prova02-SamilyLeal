@@ -23,8 +23,8 @@ public class CidadeService {
         return repository.findById(id);
     }
 
-    public Cidade saveClient(Cidade cidade){
+    public Cidade saveCidade(Cidade cidade){
         return repository.save(cidade);
     }
-    
+
 }
