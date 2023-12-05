@@ -1,6 +1,7 @@
 package com.fatec.prova02.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,4 +19,8 @@ public class CidadeService {
         return repository.findAll();
     }
 
+    public Optional<Cidade> getCidadeById(int id){
+        return repository.findById(id);
+    }
+    
 }
